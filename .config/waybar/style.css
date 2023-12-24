@@ -2,7 +2,7 @@ window#waybar {
     font-family: Terminess Nerd Font;
     color: white;
     background-color: black;
-    font-size: 16px;
+    font-size: 18px;
 }
 #tags button {
 	    /* Use box-shadow instead of border so the text isn't offset */
@@ -10,8 +10,8 @@ window#waybar {
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 #tags button.occupied {
     background-color: gray;

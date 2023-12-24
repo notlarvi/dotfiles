@@ -8,7 +8,6 @@
         "modules-left": ["river/tags"],
         "modules-center": ["river/window"],
         "modules-right": ["mpris", "tray", "clock"],
-        // "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
         "river/tags": {
             "num-tags": 9,
             "disable-click": true,
@@ -16,19 +15,10 @@
         "clock": {
             "interval": 60,
             "tooltip": true,
-            "format": "{:%d.%m.%Y %H:%M}",
+            "format": "{:%d.%m.%Y - %H:%M}",
             "tooltip-format": "{:%Y-%m-%d}",
         },
-        "mpris": {
-            "format": "{player_icon} {dynamic}",
-            "format-paused": "{status_icon} <i>{dynamic}</i>",
-            "player-icons": {
-                "default": "▶",
-                "mpv": "🎵"
-            },
-            "status-icons": {
-                "paused": "⏸"
-            },
-            // "ignored-players": ["firefox"]
+        "river/window": {
+            "max-length": 64,
         }
 }

@@ -1,21 +1,17 @@
 #!/bin/sh
 
 # This is the example configuration file for river.
-#
-# If you wish to edit this, you will probably want to copy it to
-# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
-#
-# See the river(1), riverctl(1), and rivertile(1) man pages for complete
-# documentation.
 
-# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
-
-# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
+# Keyboard settings
+riverctl keyboard-layout -options "caps:swapescape,grp:rctrl_toggle" real-prog-dvorak,ru
 
 riverctl map normal Super+Shift Return spawn alacritty
+# Dirty menu spawn command
 riverctl map normal Super D spawn 'bemenu-run --fb "#1e1e2e" --ff "#cdd6f4" --nb "#1e1e2e" --nf "#cdd6f4" --tb "#1e1e2e" --hb "#1e1e2e" --tf "#f38ba8" --hf "#f9e2af" --nf "#cdd6f4" --af "#cdd6f4" --ab "#1e1e2e" --fn "Terminess Nerd Font Mono" 11 --binding vim'
+# Screenshotting, requires grim, slurp and optionally swappy
 riverctl map normal Super+Control P spawn 'grim -g "$(slurp -d)" - | swappy -f - '
 riverctl map normal Super P spawn 'grim -g "$(slurp -d)" - | wl-copy'
+
 riverctl map normal Super Z spawn firefox
 
 # Super+Q to close the focused view
@@ -79,6 +75,7 @@ riverctl map-pointer normal Super BTN_RIGHT resize-view
 # Super + Middle Mouse Button to toggle float
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
+# Tag switching for Real Programmers Dvorak
 declare -a arr=("" "plus" "bracketleft" "braceleft" "parenleft" "ampersand" "equal" "parenright" "braceright" "bracketright" )
 
 for (( tags=1; tags<10; tags++ ));
@@ -167,6 +164,6 @@ riverctl focus-follows-cursor normal
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
-riverctl keyboard-layout -options "caps:swapescape,grp:rctrl_toggle" real-prog-dvorak,ru
+
 riverctl spawn waybar
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
