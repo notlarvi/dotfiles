@@ -6,7 +6,7 @@
         "spacing": 4, // Gaps between modules (4px)
                       // Choose the order of the modules
         "modules-left": ["river/tags"],
-        "modules-center": ["river/window"],
+        //"modules-center": ["river/window"], // Window is kinda useless, I've never really even noticed it
         "modules-right": ["mpris", "tray", "clock"],
         "river/tags": {
             "num-tags": 9,
@@ -20,5 +20,17 @@
         },
         "river/window": {
             "max-length": 64,
+        },
+        "mpris": {
+            "format": "{dynamic}",
+            "format-paused": " <i>{dynamic}</i>",
+            "player-icons": {
+                "default": "▶",
+                "mpv": "🎵"
+            },
+            "status-icons": {
+                "paused": "⏸"
+            },
+            "dynamic-len": 25,
         }
 }

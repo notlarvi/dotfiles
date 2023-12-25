@@ -1,11 +1,12 @@
 window#waybar {
+    /* Could use normal Terminus but it's kinda thick */
     font-family: Terminess Nerd Font;
     color: white;
     background-color: black;
     font-size: 18px;
 }
 #tags button {
-	    /* Use box-shadow instead of border so the text isn't offset */
+    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
@@ -14,13 +15,15 @@ window#waybar {
     padding-right: 4px;
 }
 #tags button.occupied {
-    background-color: gray;
+    box-shadow: inset 0 -3px gray;
+    color: darkgray;
 }
 #tags button.focused {
-    background-color: yellow;
+    box-shadow: inset 0 -3px yellow;
+    color: white;
 }
 #tags button.urgent {
-    background-color: red;
+    box-shadow: inset 0 -3px red;
 }
 #clock {
     margin-right: 10px;
