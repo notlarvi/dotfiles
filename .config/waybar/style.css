@@ -1,6 +1,6 @@
 window#waybar {
     /* Could use normal Terminus but it's kinda thick */
-    font-family: Terminess Nerd Font;
+    font-family: Ubuntu;
     color: white;
     background-color: black;
     font-size: 18px;
@@ -25,10 +25,18 @@ window#waybar {
 #tags button.urgent {
     box-shadow: inset 0 -3px red;
 }
+#tags button:hover {
+    color: black;
+}
 #clock {
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 #mpris {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#tray {
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 5px;
 }

@@ -7,7 +7,7 @@
                       // Choose the order of the modules
         "modules-left": ["river/tags"],
         //"modules-center": ["river/window"], // Window is kinda useless, I've never really even noticed it
-        "modules-right": ["mpris", "tray", "clock"],
+        "modules-right": ["mpris", "clock", "tray"],
         "river/tags": {
             "num-tags": 9,
             "disable-click": true,
@@ -31,6 +31,7 @@
             "status-icons": {
                 "paused": "⏸"
             },
-            "dynamic-len": 25,
+            "dynamic-len": 50,
+            "interval": 1,
         }
 }
