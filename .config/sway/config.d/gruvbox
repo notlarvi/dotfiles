@@ -1,0 +1,21 @@
+font Iosevka SS17 12
+
+set {
+    $col_urgent                    #af3a03
+    $col_focused                   #f2e5bc
+    $col_unfocused                 #282828
+    $col_focused_inactive          #665c54
+    $col_text_dark                 #504945
+    $col_text_light                #bdae93
+    $col_text_lightest             #fbf1c7
+    $col_urgent_border             #7c6f64
+    $col_focused_border            #ebdbb2
+    $col_unfocused_border          #3c3836
+    $col_focused_inactive_border   #7c6f64
+}
+
+# class                  border                        background             text                indicator              child_border
+client.focused           $col_focused_border           $col_focused           $col_text_dark      $col_focused           $col_focused_border
+client.focused_inactive  $col_focused_inactive_border  $col_focused_inactive  $col_text_lightest  $col_focused_inactive  $col_focused_inactive_border
+client.unfocused         $col_unfocused_border         $col_unfocused         $col_text_light     $col_unfocused         $col_unfocused_border
+client.urgent            $col_urgent_border            $col_urgent            $col_text_lightest  $col_urgent            $col_urgent_border
