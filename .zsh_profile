@@ -1,0 +1,2 @@
+bindkey -s ^f "~/.local/bin/tmux-sessionizer\n"
+bindkey -s ^o 'xdg-open "$(fzf)"\n'
