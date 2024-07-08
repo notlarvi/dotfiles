@@ -1,5 +1,6 @@
-assign [class="obsidian"] workspace number 1
-assign [app_id="chromium"] workspace number 2
+# Probably won't use this for now
+#assign [class="obsidian"] workspace number 1
+#assign [app_id="chromium"] workspace number 2
 #assign [app_id="Alacritty"] workspace number 3
 #assign [app_id="Alacritty"] workspace number 4
 #assign [app_id="Alacritty"] workspace number 5
@@ -7,4 +8,4 @@ assign [app_id="chromium"] workspace number 2
 #assign [app_id="Alacritty"] workspace number 7
 #assign [app_id="Alacritty"] workspace number 8
 #assign [app_id="Alacritty"] workspace number 9
-assign [app_id="org.telegram.desktop"] workspace number 10
+#assign [app_id="org.telegram.desktop"] workspace number 10

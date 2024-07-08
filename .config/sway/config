@@ -9,20 +9,9 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 set $browser chromium
 set $menu bemenu -i -l 20 --fb "#282828" --ff "#ebdbb2" --nb "#282828" --nf "#ebdbb2" --tb "#282828" --hb "#282828" --tf "#fb4934" --hf "#fabd2f" --nf "#ebdbb2" --af "#ebdbb2" --ab "#282828" --fn "Iosevka Fixed SS17"
-
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-## output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
 #
@@ -49,8 +38,9 @@ set $menu bemenu -i -l 20 --fb "#282828" --ff "#ebdbb2" --nb "#282828" --nf "#eb
 #   }
 #
 # swaymsg "input 1386:178:Wacom_Intuos3_9x12_Pen map_to_output DP-1"
+
 input type:keyboard {
-    xkb_layout real-prog-dvorak,ru,ua
+    xkb_layout us,real-prog-dvorak,ru,ua
     xkb_options grp:rctrl_toggle,caps:swapescape
     repeat_delay 400
     repeat_rate 40
@@ -74,9 +64,6 @@ input "9610:54:Glorious_Model_O" {
     bindsym $mod+Shift+Return exec $term
 # Start firefox
     bindsym $mod+z exec $browser
-
-    bindsym $mod+x exec vesktop --ozone-platform=wayland
-
 
     bindsym $mod+d exec j4-dmenu-desktop --dmenu='$menu'
 
@@ -217,18 +204,37 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+# stolen from https://github.com/a-schaefers/i3-wm-gruvbox-theme/
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+# font used by i3 for titles and bars
+font pango:Hack 8
+
+#start of bar section
 bar {
-    font TerminessNerdFont, FontAwesome 12
+    font TerminessNerdFont, FontAwesome 9
     position bottom
     status_command i3status-rs
     colors {
-        separator #666666
-        background #222222
-        statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $yellow
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
     }
 }
 #bar {
@@ -238,11 +244,5 @@ bar {
 #    # The default just shows the current date and time.
 #    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 #
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
 include ~/.config/sway/config.d/*
 include /etc/sway/config.d/*

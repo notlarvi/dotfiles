@@ -1,4 +1,5 @@
-font Iosevka SS17 12
+# stolen from ...
+font TerminessNerdFont 15
 
 set {
     $col_urgent                    #af3a03
