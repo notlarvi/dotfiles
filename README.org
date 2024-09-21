@@ -1,0 +1,6 @@
+* Welcome to notlarvi's dotfiles
+- Emacs (WIP)
+- Neovim
+  - Tmux (WIP)
+- Sway
+  - Waybar

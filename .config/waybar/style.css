@@ -1,0 +1,91 @@
+@define-color custom_accent #101010;
+* {
+  font-family: 'Terminess Nerd Font Mono';
+  font-size: 12;
+  min-height: 0;
+}
+window#waybar {
+  background-color: @custom_accent;
+}
+
+#workspaces button:hover {
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */
+}
+
+#workspaces button.focused {
+  border: none;
+  color: white;
+  font-weight: bold;
+  background-color: @custom_accent;
+}
+#workspaces button {
+  color: dimgray;
+  border: none;
+  min-width: 0px;
+  margin-top: 0px;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: black;
+}
+#workspaces {
+  background-color: black;
+}
+#clock {
+  color:white;
+}
+
+#network {
+  color: lightgray;
+}
+#pulseaudio {
+  color: lightgray;
+
+}
+#tray {
+  padding-bottom: 10px;
+}
+
+#window {
+  background-color: #101010;
+  padding-left: 10px;
+  color: lightgray;
+}
+
+#mpris,
+#tray,
+#battery,
+#clock,
+#network,
+#pulseaudio {
+  background-color: black;
+  padding-left: 4px;
+}
+
+#network {
+  color: limegreen;
+}
+#network.disabled, 
+#network.disconnected {
+  color: red;
+}
+
+#battery.full {
+  color: limegreen;
+}
+#battery.discharging {
+  color: yellow;
+}
+#mpris {
+  color: white;
+}
+#mpris.playing {
+  color: white;
+}
+#mpris.paused {
+  color: dimgray;
+}

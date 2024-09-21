@@ -1,0 +1,36 @@
+// -*- mode: json -*-
+{
+	"layer": "top",
+	"position": "bottom",
+  //"width": 10,
+	"modules-left": [
+		"sway/workspaces",
+    "sway/window"
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+    "mpris",
+    "battery",
+    "pulseaudio",
+    "network",
+    "clock"
+	],
+  "clock": {
+    "format": "W{:%U %a %d %R}"
+  },
+  "tray": {
+    "spacing": 10,
+    "icon-size": 10,
+  }, 
+  "network": {
+    "format-wifi": "{ipaddr} {essid}",
+    "format-ethernet": "{ipaddr}"
+  },
+  "mpris": {
+    "dynamic-order": ["title", "artist"],
+    //"dynamic-importance-order": ["title", "artist"],
+    "format": "{dynamic}",
+    "dynamic-len": 32,
+  }
+}
