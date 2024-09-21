@@ -1,0 +1,93 @@
+#+TITLE: King's Emacs Config
+#+AUTHOR: King
+
+* Disable GUI
+#+begin_src emacs-lisp
+  (setq inhibit-startup-message t)
+
+  (tooltip-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+
+  (set-fringe-mode 10)
+  (menu-bar-mode -1)
+
+  (setq visible-bell t)
+#+end_src
+
+* Set up use-package
+#+begin_src emacs-lisp
+  (require 'package)
+
+  (setq package-archives '(("melpa"  . "https://melpa.org/packages/")
+			   ("org" . "https://orgmode.org/elpa/")
+			   ("elpa" . "https://elpa.gnu.org/packages/")))
+  (package-initialize)
+  (unless package-archive-contents
+    (package-refresh-contents))
+
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+#+end_src
+* Appearance
+** Theme
+#+begin_src emacs-lisp
+  (use-package doom-themes
+    :init
+    (load-theme 'doom-ir-black))
+#+end_src
+** Font
+#+begin_src emacs-lisp
+  (add-to-list 'default-frame-alist
+	       '(font . "Hack Nerd Font Mono"))
+#+end_src
+** Modeline
+#+begin_src emacs-lisp
+  (use-package doom-modeline
+    :ensure t
+    :init (doom-modeline-mode 1))
+
+  (column-number-mode)
+
+
+  (setq doom-modeline-modal-icon nil)
+#+end_src
+** Line numbers
+#+begin_src emacs-lisp
+  (global-display-line-numbers-mode t)
+  (setq display-line-numbers 'relative)
+#+end_src
+* Keybinds
+** eVIl mode
+#+begin_src emacs-lisp
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+
+;; Enable Evil
+(require 'evil)
+(evil-mode 1)
+  
+#+end_src
+* Org
+** Org Appearance
+#+begin_src emacs-lisp
+  (setq org-hide-emphasis-markers t) ;; Markers
+
+  (use-package org-modern
+    :hook ((org-mode . org-modern-mode)
+	   (org-agenda-finalize-hook . org-modern-agenda)))
+#+end_src
+** Org templates
+#+begin_src emacs-lisp
+#+end_src
+** 
+* Utils
+** Completion
+*** Ivy
+#+begin_src emacs-lisp
+  (use-package ivy
+    :config
+    (ivy-mode 1))
+#+end_src
+* Resources
+[[https://github.com/noctuid/evil-guide]]
