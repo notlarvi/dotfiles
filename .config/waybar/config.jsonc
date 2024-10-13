@@ -32,5 +32,10 @@
     //"dynamic-importance-order": ["title", "artist"],
     "format": "{dynamic}",
     "dynamic-len": 32,
+  },
+  "sway/workspaces": {
+    "format": "{value}",
+      //"high-priority-named": ["1", "2"]
+    }
   }
 }
